@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variables de color para consistencia */
+:root {
+  --primary-color: #df08d4;
+  --primary-color-hover: #080544;
+  --background: #ffffff;
+  --text-color: #080544;
+  --card-background: rgb(253, 253, 253);
+  --button-background: #050505;
+  --button-text: white;
+  --border-color: #000000;
+  --shadow-color: rgb(51, 8, 240);
+}
+
+/* Estilos base */
+* {
+  box-sizing: border-box;
+  margin: 8px;
+  padding:0;
+}
+
+html {
+  font-size: 17px;
+}
+
+body {
+  font-family:cursive;
+  background: linear-gradient(to bottom, var(--background-light), var(--background-dark));
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Estilos de encabezados */
+h1, h2, h3, h4 {
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.7em;
+}
+
+/* Estilos de botones */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.8em 1.6em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--button-background);
+  color: var(--button-text);
+  cursor: pointer;
+  transition: border-color 0.25s;
+  margin: 5px;
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+button:hover {
+  border-color: var(--primary-color);
+  background-color: #3f1035;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Contenedor de botones */
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+/* Estilos de formularios */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+form .input-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+form label {
+  font-size: 1.125em;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  margin-bottom: 8px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1em;
+  color: var(--text-color);
+  background-color: white;
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+/* Estilos de componentes (Tailwind) */
+.button {
+  @apply bg-blue-500 text-white py-2 px-4 rounded-md transition-all duration-300;
+}
+
+.button:hover {
+  @apply bg-blue-700;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.card {
+  @apply bg-white text-gray-800 p-6 rounded-lg shadow-md;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  border: 1px solid var(--border-color);
+}
+
+.card h3,
+.card p {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 1.25em;
+}
+
+.card p {
+  font-size: 1em;
+}
+
+/* Estilos específicos para TaskList */
+.task-item {
+  @apply border p-4 mb-4 rounded-lg shadow-sm;
+  background-color: white;
+}
+
+.task-item h3 {
+  @apply text-lg font-semibold mb-2;
+}
+
+.task-item p {
+  @apply mb-4;
+}
+
+.task-item .task-actions {
+  @apply flex justify-center gap-2;
+}
+
+.task-item .task-actions button {
+  @apply py-2 px-4 rounded-md;
+}
+
+.task-item .task-actions .edit-input {
+  @apply border p-2 mb-2 w-full;
+}
+
+.task-item .task-actions .edit-textarea {
+  @apply border p-2 mb-2 w-full;
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Utilidades personalizadas (Tailwind) */
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+
+  .scrollbar-thumb {
+    scrollbar-color: var(--primary-color) var(--background-light);
+  }
+
+  .custom-shadow {
+    box-shadow: 0 4px 6px var(--shadow-color);
+  }
+
+  .text-gradient {
+    background-image: linear-gradient(to right, var(--primary-color), #fbc02d);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+}
+
+
