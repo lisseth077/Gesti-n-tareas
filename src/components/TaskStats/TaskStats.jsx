@@ -5,13 +5,20 @@ const TaskStats = ({ tasks }) => {
   const pendingTasks = tasks.filter((task) => !task.completed).length;
 
   return (
-    <div className="flex justify-between p-4 bg-gray-100 rounded">
+    <div className="p-6 bg-white rounded-lg shadow-md border border-gray-200"
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '1rem',
+      }}
+    >
       <div>
-        <p className="text-lg font-semibold">Tareas Pendientes:</p>
+        <p className="text-lg font-semibold">Pendientes:</p>
         <p className="text-2xl font-bold text-blue-600">{pendingTasks}</p>
       </div>
       <div>
-        <p className="text-lg font-semibold">Total de Tareas:</p>
+        <p className="text-lg font-semibold">Total:</p>
         <p className="text-2xl font-bold text-gray-700">{totalTasks}</p>
       </div>
     </div>
@@ -19,3 +26,7 @@ const TaskStats = ({ tasks }) => {
 };
 
 export default TaskStats;
+
+
+ 
+    
